@@ -68,6 +68,37 @@
     // Console.WriteLine($"Propriedades da classe: {ContaCorrente.TotalDeContasCriadas}");
 ```
 
+## Adicionar conta com exeception
+```
+    try
+    {
+        // Criar uma conta corrente
+        Cliente viniciusCliente = new Cliente();
+        viniciusCliente.Nome = "Pedro Silva";
+        viniciusCliente.Cpf = "146548-88423";
+        viniciusCliente.Profissao = "Pedreiro(a)";
+
+        ContaCorrente vinicius = new ContaCorrente(135, "45-x");
+        vinicius.Titular = viniciusCliente;
+        vinicius.Sacar(150);
+        vinicius.ExibirDadosDaConta(vinicius);
+    }
+    catch(ArgumentException ex)
+    {
+        Console.WriteLine($"Parametro que está com problema: {ex.ParamName}");
+        // Informa aonde a linha que está com exceção e aonde está tratando a exceção.
+        Console.WriteLine(ex.StackTrace);
+        Console.WriteLine($"{ex.Message}");
+    }catch(SaldoInsuficienteException ex)
+    {
+        Console.WriteLine("Operação negada, saldo insuficiente!");
+        Console.WriteLine(ex.Message);
+
+        //Console.WriteLine(ex.InnerException.Message);
+        //Console.WriteLine(ex.InnerException.StackTrace);
+    }
+```
+
 # Explicação de algumas partes do paradigma (POO) e boas práticas
 
 ## Visilibilidade
