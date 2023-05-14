@@ -5,6 +5,7 @@ using byteBank_Alura.Parceria;
 using byteBank_Alura.SistemaInterno;
 using byteBank_Alura.Titular;
 using byteBank_Alura.Utilitario;
+using System;
 using System.Reflection.Metadata;
 
 namespace ConsoleApp
@@ -99,7 +100,34 @@ namespace ConsoleApp
             {
                 Console.WriteLine("Operação negada, saldo insuficiente!");
                 Console.WriteLine(ex.Message);
+
+                //Console.WriteLine(ex.InnerException.Message);
+                //Console.WriteLine(ex.InnerException.StackTrace);
             }
+            LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
+
+            try
+            {
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Leitura de arquivo interrompida");
+            }
+            finally
+            {
+                leitor.Fechar();
+            }
+
+            //  syntax sugar
+            using (LeitorDeArquivo leitor1 = new LeitorDeArquivo("contas.txt"))
+            {
+                leitor1.LerProximaLinha();
+                leitor1.LerProximaLinha();
+                leitor1.LerProximaLinha();
+            }
+
 
             #endregion
         }
