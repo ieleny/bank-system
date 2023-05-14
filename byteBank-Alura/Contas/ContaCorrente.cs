@@ -1,4 +1,5 @@
 ﻿using byteBank_Alura.Titular;
+using System.Data;
 
 namespace byteBank_Alura.Contas
 {
@@ -58,6 +59,13 @@ namespace byteBank_Alura.Contas
         {
             this.Numero_agencia = numero_agencia;
             this.Conta = conta;
+            TotalDeContasCriadas++;
+
+            if (numero_agencia <= 0)
+            {
+
+                throw new ArgumentException("Numero da agencia menor igual a zero!", nameof(numero_agencia)); 
+            }
 
             try {
                 TaxaOperacao = 30 / TotalDeContasCriadas;
@@ -66,7 +74,6 @@ namespace byteBank_Alura.Contas
                 Console.WriteLine("Ocorreu um erro! Não é possivel fazer um divisão por zero.");
             }
             
-            TotalDeContasCriadas++;
         }
 
         public void Depositar(double valor)

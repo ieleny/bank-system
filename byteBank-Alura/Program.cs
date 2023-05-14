@@ -4,6 +4,7 @@ using byteBank_Alura.Parceria;
 using byteBank_Alura.SistemaInterno;
 using byteBank_Alura.Titular;
 using byteBank_Alura.Utilitario;
+using System.Reflection.Metadata;
 
 namespace ConsoleApp
 {
@@ -67,6 +68,30 @@ namespace ConsoleApp
                 sistema.Logar(ingrid, "123");
                 sistema.Logar(ursula, "963");
                 sistema.Logar(caio, "321");
+            }
+
+            #endregion
+
+
+            #region
+
+            try
+            {
+                // Criar uma conta corrente
+                Cliente viniciusCliente = new Cliente();
+                viniciusCliente.Nome = "Pedro Silva";
+                viniciusCliente.Cpf = "146548-88423";
+                viniciusCliente.Profissao = "Pedreiro(a)";
+
+                ContaCorrente vinicius = new ContaCorrente(135, "45-x");
+                vinicius.Titular = viniciusCliente;
+                vinicius.Sacar(50);
+                vinicius.ExibirDadosDaConta(vinicius);
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine($"Parametro que está com problema: {ex.ParamName}");
+                Console.WriteLine($"{ex.Message}");
             }
 
             #endregion
