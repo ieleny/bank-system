@@ -1,4 +1,5 @@
 ﻿using byteBank_Alura.Contas;
+using byteBank_Alura.Exceptions;
 using byteBank_Alura.Funcionarios;
 using byteBank_Alura.Parceria;
 using byteBank_Alura.SistemaInterno;
@@ -85,13 +86,17 @@ namespace ConsoleApp
 
                 ContaCorrente vinicius = new ContaCorrente(135, "45-x");
                 vinicius.Titular = viniciusCliente;
-                vinicius.Sacar(50);
+                vinicius.Sacar(150);
                 vinicius.ExibirDadosDaConta(vinicius);
             }
             catch(ArgumentException ex)
             {
                 Console.WriteLine($"Parametro que está com problema: {ex.ParamName}");
                 Console.WriteLine($"{ex.Message}");
+            }catch(SaldoInsuficienteException ex)
+            {
+                Console.WriteLine("Operação negada, saldo insuficiente!");
+                Console.WriteLine(ex.Message);
             }
 
             #endregion

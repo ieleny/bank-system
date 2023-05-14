@@ -1,4 +1,5 @@
-﻿using byteBank_Alura.Titular;
+﻿using byteBank_Alura.Exceptions;
+using byteBank_Alura.Titular;
 using System.Data;
 
 namespace byteBank_Alura.Contas
@@ -89,8 +90,10 @@ namespace byteBank_Alura.Contas
 
                 return true;
             }
-
-            return false;
+            else
+            {
+                throw new SaldoInsuficienteException("Saldo insuficiente para operação!");
+            }
         }
 
         public bool Transferir(double valor, ContaCorrente destino)
