@@ -92,6 +92,8 @@ namespace ConsoleApp
             catch(ArgumentException ex)
             {
                 Console.WriteLine($"Parametro que está com problema: {ex.ParamName}");
+                // Informa aonde a linha que está com exceção e aonde está tratando a exceção.
+                Console.WriteLine(ex.StackTrace);
                 Console.WriteLine($"{ex.Message}");
             }catch(SaldoInsuficienteException ex)
             {
