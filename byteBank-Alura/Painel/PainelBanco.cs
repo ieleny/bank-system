@@ -10,42 +10,30 @@ namespace byteBank_Alura.Painel
         {
             Console.WriteLine("Tela de inicialização do banco");
             Console.WriteLine("1 - Adicionar conta corrente");
-            Console.WriteLine("2 - Acessar conta corrente");
-            Console.WriteLine("3 - Área Administrador");
+            Console.WriteLine("2 - Área Administrador");
 
             Console.WriteLine("Digite o numero aqui:");
 
-            this.DigitarOpcao();
+            DigitarOpcao();
         }
 
         private void DigitarOpcao()
         {
-            int opcaoEscolhida = Convert.ToInt32(Console.ReadLine());
-            this.RedirecionamentoPainel(opcaoEscolhida);
+            var opcaoEscolhida = Convert.ToInt32(Console.ReadLine());
+            RedirecionamentoPainel(opcaoEscolhida);
         }
 
         public void RedirecionamentoPainel(int menuOpcao)
         {
+            var contexto = new Contexto(new ContaCorrenteStrategy());
+
             switch (menuOpcao)
             {
                 case 1:
-                    this.CriarContaCorrente();
+                    contexto.SetStrategy(new ContaCorrenteStrategy());
+                    contexto.AcessarPainelEstrategico();
                     break;
             }
-        }
-
-
-        private void CriarContaCorrente()
-        {
-            Cliente clienteAndre = new Cliente();
-            clienteAndre.Nome = "André silva";
-            clienteAndre.Cpf = "146548-8848";
-            clienteAndre.Profissao = "Contador";
-
-            ContaCorrente contaDoAndre = new ContaCorrente(15, "1010-4");
-            contaDoAndre.Titular = clienteAndre;
-
-            contaDoAndre.ExibirDadosDaConta(contaDoAndre);
         }
 
     }

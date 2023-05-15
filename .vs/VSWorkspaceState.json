@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\byteBank-Alura",
+    "\\byteBank-Alura\\Painel",
     "\\byteBank-Alura\\SistemaInterno"
   ],
-  "SelectedNode": "\\byteBank-Alura\\SistemaInterno\\SistemaInterno.cs",
+  "SelectedNode": "\\byteBank-Alura\\Painel\\PainelBanco.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -7,7 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            PainelBanco painelBanco = new PainelBanco();
+            var painelBanco = new PainelBanco();
             painelBanco.Painel();
         }
     }
