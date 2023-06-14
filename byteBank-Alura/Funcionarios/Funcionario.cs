@@ -8,10 +8,8 @@ namespace byteBank_Alura.Funcionarios
         public string Cpf { get; private set; }
         public double Salario { get; protected set; }
 
-        // Propriedade da classe
         public static int TotalDeFuncionarios { get; private set; }
 
-        // code snippet para construtor: ctor + tab
         public Funcionario(string cpf, double salario)
         {
             this.Cpf = cpf; 
@@ -19,7 +17,6 @@ namespace byteBank_Alura.Funcionarios
             TotalDeFuncionarios++;
         }
 
-        // Sobrescrita do metodo
         public abstract double GetBonificacao();
         public abstract void AumentarSalario();
 
