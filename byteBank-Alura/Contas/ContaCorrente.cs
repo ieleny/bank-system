@@ -4,20 +4,12 @@ using System.Data;
 
 namespace byteBank_Alura.Contas
 {
-    //Visibilidade
-    //Nome da classe, propriedades,enumeradores,interfaces,records e estruturas precisa ser em PascalCase
     public class ContaCorrente
     {
-        // Modificadores de acesso: public, private, protected, internal, protected internal
-
-        // CamelCase: Quando for nomear variaveis que definem campos e parametros de metodos, os campos private ou internal com o prefixo _
-        // CamelCase: Metodos
         private int numero_agencia;
-        // Propriedades
         public int Numero_agencia 
         {
             get { return this.numero_agencia; }
-            // Só será visivel dentro da classe
             private set { 
                 if (value > 0) 
                 { 
@@ -26,12 +18,8 @@ namespace byteBank_Alura.Contas
             }
         }
 
-        // Propriedade autoimplementada
         public string Conta { get; set; }
-
         private double saldo = 100;
-
-        // Encapsulamento
         public void SetSaldo(double valor)
         {
             if (valor <= 0)
@@ -50,9 +38,6 @@ namespace byteBank_Alura.Contas
         }
 
         public Cliente Titular { get; set; }
-
-        // Quando utiliza o static é uma Propriedade da classe
-        // Essa propriedade é salva no codigo fonte do projeto, então cuidado ao utilizar por causa da performance
         public static int TotalDeContasCriadas { get; private set; }
         public static float TaxaOperacao { get; private set; }
 
