@@ -1,4 +1,5 @@
 using byteBank_Alura.Contas;
+using byteBank_Alura.Repositorios.Contas;
 using byteBank_Alura.Titular;
 using System;
 
@@ -15,22 +16,31 @@ namespace byteBank_Alura.Painel
             Console.WriteLine("3 - Transferir");
 
             Console.WriteLine("Digite o numero aqui:");
-
-            var opcaoEscolhida = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(opcaoEscolhida);
+            DigitarOpcao();
         }
 
-        private void CriarContaCorrente()
+        private void DigitarOpcao()
         {
-            Cliente clienteAndre = new Cliente();
-            clienteAndre.Nome = "André silva";
-            clienteAndre.Cpf = "146548-8848";
-            clienteAndre.Profissao = "Contador";
+            var opcaoEscolhida = Convert.ToInt32(Console.ReadLine());
+            RedirecionamentoPainel(opcaoEscolhida);
+        }
 
-            var contaDoAndre = new ContaCorrente(15, "1010-4");
-            contaDoAndre.Titular = clienteAndre;
+        private void RedirecionamentoPainel(int menuOpcao)
+        {
+            var contexto = new ContaCorrenteRepositorio();
 
-            contaDoAndre.ExibirDadosDaConta(contaDoAndre);
+            switch (menuOpcao)
+            {
+                case 1:
+                    contexto.CriarContaCorrente();
+                    break;
+                case 2:
+                    contexto.EditarContaCorrente();
+                    break;
+                case 3:
+                    contexto.TransferirContaCorrente();
+                    break;
+            }
         }
 
     }

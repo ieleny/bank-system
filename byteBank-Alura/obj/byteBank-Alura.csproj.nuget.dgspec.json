@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ieleny.filgueira\\Documents\\Projetos estudos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj": {}
+    "C:\\Users\\ielen\\source\\repos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ieleny.filgueira\\Documents\\Projetos estudos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj": {
+    "C:\\Users\\ielen\\source\\repos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ieleny.filgueira\\Documents\\Projetos estudos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj",
+        "projectUniqueName": "C:\\Users\\ielen\\source\\repos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj",
         "projectName": "byteBank-Alura",
-        "projectPath": "C:\\Users\\ieleny.filgueira\\Documents\\Projetos estudos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj",
-        "packagesPath": "C:\\Users\\ieleny.filgueira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ieleny.filgueira\\Documents\\Projetos estudos\\bank-system\\byteBank-Alura\\obj\\",
+        "projectPath": "C:\\Users\\ielen\\source\\repos\\bank-system\\byteBank-Alura\\byteBank-Alura.csproj",
+        "packagesPath": "C:\\Users\\ielen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ielen\\source\\repos\\bank-system\\byteBank-Alura\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ieleny.filgueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ielen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,7 +9,7 @@ namespace byteBank_Alura.Painel
         public void Painel() 
         {
             Console.WriteLine("Tela de inicialização do banco");
-            Console.WriteLine("1 - Adicionar conta corrente");
+            Console.WriteLine("1 - Gerenciar conta corrente");
             Console.WriteLine("2 - Área Administrador");
 
             Console.WriteLine("Digite o numero aqui:");
@@ -25,7 +25,7 @@ namespace byteBank_Alura.Painel
 
         public void RedirecionamentoPainel(int menuOpcao)
         {
-            var contexto = new Contexto(new ContaCorrenteStrategy());
+            var contexto = new Contexto();
 
             switch (menuOpcao)
             {
