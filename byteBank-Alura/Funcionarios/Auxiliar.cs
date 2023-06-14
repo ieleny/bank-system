@@ -2,6 +2,7 @@
 {
     public class Auxiliar : Funcionario
     {
+
         public Auxiliar(string cpf) : base(cpf, 2000)
         {
 
@@ -17,6 +18,7 @@
         {
             return this.Salario + 0.2;
         }
+
 
         public override void AumentarSalario()
         {
